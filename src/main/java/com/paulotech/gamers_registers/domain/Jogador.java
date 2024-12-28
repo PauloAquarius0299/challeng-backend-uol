@@ -16,5 +16,4 @@ public class Jogador {
     String telefone;
     GrupoCodinome grupoCodinome;
 
-
 }
