@@ -1,5 +1,6 @@
 package com.paulotech.gamers_registers.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.paulotech.gamers_registers.domain.GrupoCodinome;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,7 @@ public class CodinomeService {
         return codinomeSorteado;
     }
 
-    private List<String> listarCodinomesDisponiveis(GrupoCodinome grupoCodinome, List<String> codinomesEmEnum) {
+    private List<String> listarCodinomesDisponiveis(GrupoCodinome grupoCodinome, List<String> codinomesEmEnum) throws JsonProcessingException {
         var codinomes = buscarCodinomes(grupoCodinome);
 
         var codinomesDisponiveis = codinomes
@@ -32,8 +33,8 @@ public class CodinomeService {
         return codinomesDisponiveis;
     }
 
-    private List<String> buscarCodinomes(GrupoCodinome grupoCodinome) {
+    private List<String> buscarCodinomes(GrupoCodinome grupoCodinome) throws JsonProcessingException {
         var codinomeRepository = codinomeRepositoryFactory.create(grupoCodinome);
-        return List.of();
+        return codinomeRepository.buscarCodinomes();
     }
 }
