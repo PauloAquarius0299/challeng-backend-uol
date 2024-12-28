@@ -4,10 +4,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.paulotech.gamers_registers.domain.GrupoCodinome;
 import com.paulotech.gamers_registers.repository.dto.LigaDaJusticaDTO;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestClient;
 
 import java.util.List;
 
+@Repository
 public class LigaDaJusticaRepository implements CodinomeRepository{
     @Override
     public List<String> buscarCodinomes() throws JsonProcessingException {
