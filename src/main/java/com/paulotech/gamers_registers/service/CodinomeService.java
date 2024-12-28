@@ -37,4 +37,9 @@ public class CodinomeService {
         var codinomeRepository = codinomeRepositoryFactory.create(grupoCodinome);
         return codinomeRepository.buscarCodinomes();
     }
+
+    private String sortearCodinome(List<String> codinomesDisponiveis) {
+        return codinomesDisponiveis
+                .get((int) (Math.random() * codinomesDisponiveis.size()));
+    }
 }
