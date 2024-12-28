@@ -13,7 +13,7 @@ public class Jogador {
     String nome;
     String email;
     String codinome;
-    int telefone;
+    String telefone;
     GrupoCodinome grupoCodinome;
 
 
