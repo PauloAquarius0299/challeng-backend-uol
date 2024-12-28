@@ -3,9 +3,11 @@ package com.paulotech.gamers_registers.service;
 import com.paulotech.gamers_registers.domain.GrupoCodinome;
 import com.paulotech.gamers_registers.domain.Jogador;
 import com.paulotech.gamers_registers.repository.JogadorRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class JogadorService {
 
     private final JogadorRepository jogadorRepository;
