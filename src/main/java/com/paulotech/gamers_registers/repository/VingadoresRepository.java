@@ -14,7 +14,7 @@ import java.util.List;
 public class VingadoresRepository implements CodinomeRepository{
 
     @Override
-    public List<String> bsucarCodinomes() throws JsonProcessingException {
+    public List<String> buscarCodinomes() throws JsonProcessingException {
         var codinomes = RestClient
                 .builder()
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
