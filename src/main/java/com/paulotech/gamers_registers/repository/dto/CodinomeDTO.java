@@ -6,3 +6,4 @@ public interface CodinomeDTO {
     List<String> getCodinomes();
 
 }
+

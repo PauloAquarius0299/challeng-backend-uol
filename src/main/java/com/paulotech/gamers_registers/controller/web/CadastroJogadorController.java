@@ -2,6 +2,7 @@ package com.paulotech.gamers_registers.controller.web;
 
 import com.paulotech.gamers_registers.domain.GrupoCodinome;
 import com.paulotech.gamers_registers.domain.Jogador;
+import com.paulotech.gamers_registers.exceptions.GrupoCodinomeIndisposiveisException;
 import com.paulotech.gamers_registers.service.JogadorService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -27,9 +28,13 @@ public class CadastroJogadorController {
     public String cadastrarJogador(@ModelAttribute @Valid Jogador jogador, BindingResult result, Model model) throws Exception {
         if(result.hasErrors())
             return getViewAndModel(model, jogador);
-
-        jogadorService.registrarJogador(jogador);
-        return "redirect:/cadastro-jogador";
+        try {
+            jogadorService.registrarJogador(jogador);
+            return "redirect:/cadastro-jogador";
+        } catch (GrupoCodinomeIndisposiveisException e){
+            result.rejectValue("grupoCodinome", "grupoCodinomeIndisponivel", e.getMessage());
+            return getViewAndModel(model, jogador);
+        }
     }
 
     private String getViewAndModel(Model model, Jogador jogador){
