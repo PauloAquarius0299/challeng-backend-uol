@@ -19,19 +19,19 @@ public class JogadorService {
     }
 
     public Jogador registrarJogador(Jogador jogador) throws Exception {
-        var codinomeEmUso = listarCodinomeEmUso(jogador.getGrupoCodinome());
-        var novoCodinome = codinomeService.gerarCodinome(jogador.getGrupoCodinome(), codinomeEmUso);
+        var codinomeEmUso = listarCodinomeEmUso(jogador.grupoCodinome());
+        var novoCodinome = codinomeService.gerarCodinome(jogador.grupoCodinome(), codinomeEmUso);
 
         var novoJogador = new Jogador(
-                jogador.getNome(),
-                jogador.getEmail(),
-                jogador.getTelefone(),
+                jogador.nome(),
+                jogador.email(),
+                jogador.codinome(),
                 novoCodinome,
-                jogador.getGrupoCodinome());
+                jogador.grupoCodinome());
         return jogadorRepository.salvar(novoJogador);
     }
 
     private List<String> listarCodinomeEmUso(GrupoCodinome grupoCodinome) {
-        return jogadorRepository.listarCodinomesPorGrupo(grupoCodinome);
+        return jogadorRepository.listarCodinomesEmUso(grupoCodinome);
     }
 }
