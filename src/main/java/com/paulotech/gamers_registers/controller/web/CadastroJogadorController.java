@@ -3,11 +3,12 @@ package com.paulotech.gamers_registers.controller.web;
 import com.paulotech.gamers_registers.domain.GrupoCodinome;
 import com.paulotech.gamers_registers.domain.Jogador;
 import com.paulotech.gamers_registers.service.JogadorService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("cadastro-jogador")
+@Controller
+@RequestMapping("/cadastro-jogador")
 public class CadastroJogadorController {
     private final JogadorService jogadorService;
 
@@ -16,10 +17,10 @@ public class CadastroJogadorController {
     }
 
     @GetMapping
-    public String paginaCadastroDoJogador(Model model) {
-        model.addAttribute("jogador", new Jogador());
+    public String paginaCadastroDoJogador(Model model, Jogador jogador) {
+        model.addAttribute("jogador", jogador);
         model.addAttribute("grupoCodinome", GrupoCodinome.values());
-        return "cadastro-jogador";
+        return "cadastro_jogador";
     }
 
 
