@@ -38,7 +38,8 @@
                 <input type="radio" class="form-check-input" th:field="*{grupoCodinome}" th:value="${grupo.name()}" th:id="${grupo.name()}" required />
                 <label class="form-check-label" th:for="${grupo.name()}" th:text="${grupo.getNome()}"></label>
             </div>
-            <div th:if="${#fields.hasErrors('grupoCodinome')}" th:errors="*(grupoCodinome)">Seleção é obrigatória</div>
+            <div th:if="${#fields.hasErrors('grupoCodinome')}" th:errors="*{grupoCodinome}">Seleção de grupo de codinome é
+                obrigatória</div>
         </div>
 
         <!-- Botão -->

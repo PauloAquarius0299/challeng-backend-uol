@@ -30,7 +30,7 @@ public class CadastroJogadorController {
             return getViewAndModel(model, jogador);
         try {
             jogadorService.registrarJogador(jogador);
-            return "redirect:/cadastro-jogador";
+            return "redirect:/listagem-jogadores";
         } catch (GrupoCodinomeIndisposiveisException e){
             result.rejectValue("grupoCodinome", "grupoCodinomeIndisponivel", e.getMessage());
             return getViewAndModel(model, jogador);
