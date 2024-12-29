@@ -35,7 +35,7 @@ public class CodinomeService {
 
     private List<String> buscarCodinomes(GrupoCodinome grupoCodinome) throws JsonProcessingException {
         var codinomeRepository = codinomeRepositoryFactory.create(grupoCodinome);
-        return codinomeRepository.buscarCodinomes();
+        return codinomeRepository.buscarCodinomes().getCodinomes();
     }
 
     private String sortearCodinome(List<String> codinomesDisponiveis) {

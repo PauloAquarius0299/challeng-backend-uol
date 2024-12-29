@@ -1,9 +1,8 @@
 package com.paulotech.gamers_registers.repository;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-
-import java.util.List;
+import com.paulotech.gamers_registers.repository.dto.CodinomeDTO;
 
 public interface CodinomeRepository {
-    List<String> buscarCodinomes() throws JsonProcessingException;
+    CodinomeDTO buscarCodinomes() throws JsonProcessingException;
 }
