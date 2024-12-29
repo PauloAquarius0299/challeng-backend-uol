@@ -17,8 +17,6 @@ public class VingadoresRepository implements CodinomeRepository{
     public CodinomeDTO buscarCodinomes() throws JsonProcessingException {
         var codinomes = RestClient
                 .builder()
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .defaultHeader(HttpHeaders.ACCEPT, MediaType.TEXT_PLAIN_VALUE)
                 .baseUrl(GrupoCodinome.VIGADORES.getUri())
                 .build()
                 .get()
