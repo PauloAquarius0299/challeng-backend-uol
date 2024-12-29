@@ -22,4 +22,8 @@ O desafio consiste em, após o cadastro de um usuário, sortear um codinome de p
 * HTML
 * Thymeleaf
 * Mockito
-* Jdbc 
+* Jdbc
+### Link do Desafio UOL
+```
+https://github.com/uolhost/test-backEnd-Java
+```
