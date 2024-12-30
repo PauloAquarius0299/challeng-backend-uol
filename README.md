@@ -2,7 +2,7 @@
 Resolvendo o desafio da UOL com Java, exibindo uma lista de jogadores cadastrados com codinomes de personagens, utilizando os arquivos JSON e XML disponibilizados no link do desafio.
 
 #### Arquitetura simples do projeto:
-![Captura de Tela (440)](https://github.com/user-attachments/assets/7e5119b4-4315-4456-bad0-addb66bb4326)
+![oul-backend](https://github.com/user-attachments/assets/5aa141b6-af1d-46ff-9b9b-8244b04ca410)
 
 ## Indrodução 
 O desafio consiste em, após o cadastro de um usuário, sortear um codinome de personagem (dos Vingadores ou da Liga da Justiça). Esse codinome seria exibido na tabela quando o botão "Listar Jogadores" fosse clicado.
